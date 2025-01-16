@@ -1,0 +1,14 @@
+services:
+  postgres-test:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 54321:5432
+    networks:
+      - api_test
+
+networks:
+  api_test:
+    driver: bridge
