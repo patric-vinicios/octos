@@ -47,6 +47,7 @@ defmodule ApiWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
   plug CORSPlug,
     origin: "*",
     credentials: true,
@@ -63,7 +64,7 @@ defmodule ApiWeb.Endpoint do
       "Keep-Alive",
       "X-Requested-With",
       "If-Modified-Since",
-      "X-CSRF-Token",
+      "X-CSRF-Token"
     ],
     methods: ["POST"],
     send_preflight_response?: true
