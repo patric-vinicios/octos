@@ -1,51 +1,76 @@
-# Exercício de Backend 
+# Octos Challenge
 
-- documentar e explicar as tomadas de decisões
-- usar graphql
+Difficulty: ⭐☆☆☆☆
 
-## Expectativas
+______________________________________________________________
 
-- Deve ser código pronto para produção
-  - O código nos mostrará como você entrega coisas para produção e será um reflexo do seu trabalho.
-- Você tem 5 dias para entregar o código. Além disso, se houver algo que você teve que deixar incompleto ou se há uma melhor solução que você implementaria, mas não pôde devido a limitações de tempo pessoais, por favor, tente nos guiar através do seu processo de pensamento ou de quaisquer partes faltantes, utilizando a seção "Detalhes da Implementação" abaixo.
+# Api
 
-## O que você vai construir
+## Setup Instructions
 
-Um aplicativo Phoenix com 2 endpoints para gerenciar câmeras.
+### Installing Elixir
 
-Não esperamos que você implemente autenticação e autorização, mas sua solução final deve assumir que será implantada em produção e que os dados serão consumidos por uma Single Page Application que roda nos navegadores dos clientes.
+Using [MacOS](https://elixir-lang.org/install.html#:~:text=Using-,Homebrew,-%3A):
 
-## Requisitos
+```
+brew install elixir
+```
 
-- Devemos armazenar usuários e câmeras em um banco de dados PostgreSQL.
-- Cada usuário tem um nome e pode ter múltiplas câmeras.
-- Cada câmeras deve ter uma marca.
-- Todos os campos acima definidos devem ser obrigatórios.
-- Cada usuário deve ter pelo menos 1 câmera ativa em um dado momento.
-- Todos os endpoints devem retornar JSON.
-- Um arquivo readme com instruções sobre como executar o aplicativo.
+Using [Windows](https://elixir-lang.org/install.html#windows):
 
-### Tarefas
+```
+https://github.com/elixir-lang/elixir-windows-setup/releases/download/v2.2/elixir-websetup.exe
+```
 
-1. Implementar um endpoint para fornecer uma lista de usuários e suas câmeras
-   - Cada usuário deve retornar seu nome e suas câmeras ativas.
-   - Alguns usuários podem ter sido desligados (a funcionalidade de desligamento deve ser considerada fora do escopo deste exercício), então só nesse caso é possível que todas as câmeras pertencentes a um usuário estejam inativas. Nestes casos, o endpoint deve retornar a data em que o usuário foi desligado.
-   - Este endpoint deve suportar filtragem por parte do nome da câmera e ordenação pelo nome da camera.
-   - Endpoint: GET /cameras
+Using [Linux](https://elixir-lang.org/install.html#gnulinux):
 
-2. Implementar um endpoint que envia um e-mail para cada usuário com uma câmera da marca Hikvision;
-   - ⚠️ O app não precisa enviar email de fato, então você não precisa necessariamente de acesso à internet para trabalhar no seu desafio.
-   - Você pode usar o modo "dev/mailbox" que já vem no phoenix.
-   - Endpoint: POST /notify-users
+```
+Follow the instructions to your Linux distribution
+```
 
-### Quando terminar
+### Verifying Elixir and Erlang version
 
-- Você pode usar a seção "Detalhes da Implementação" para explicar algumas decisões/limitações da sua implementação.
-- Envie o link do repositório para [lucas@octos.ai](mailto:lucas@octos.ai).
-- Você também pode enviar algum feedback sobre este exercício.
+```
+elixir -v
+```
 
----
+### Clone repository
 
-## Detalhes da Implementação
+```
+git clone git@github.com:patric-vinicios/octos.git
+```
 
-Essa seção é para você preencher com quaisquer decisões que tomou que podem ser relevantes. Você também pode mudar esse README para atender suas necessidades.# octos
+**Enter into the repository:**
+
+```
+cd octos
+```
+
+### Installing [Phoenix](https://hexdocs.pm/phoenix/up_and_running.html)
+
+```
+mix archive.install hex phx_new
+```
+
+### Starting Phoenix Server
+
+```
+docker compose -f docker-compose.dev.yml up -d
+docker compose -f docker-compose.test.yml up -d
+```
+
+**then run:**
+
+```
+mix deps.get
+mix ecto.setup
+```
+
+**Then run:**
+
+`iex -S mix phx.server`
+
+Now you can visit [`http://localhost:4000/dashboard`](http://localhost:4000/dashboard) from your browser.
+
+___________________________________________________________________________
+
