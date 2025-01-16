@@ -12,7 +12,7 @@ defmodule Api.Users.Workers.SendEmail do
   alias Api.Repo
   alias Api.Users.User
 
-  @camera_to_send_email "aaa"
+  @camera_to_send_email "Hikvision"
   @batch_size 500
 
   def perform(%Oban.Job{args: %{}}) do
