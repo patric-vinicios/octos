@@ -5,10 +5,10 @@ defmodule Api.Users do
 
   import Ecto.Query
 
-  alias Api.Users.Workers.SendEmail, as: SendEmailWorker
   alias Api.Cameras.Camera
   alias Api.Flop
   alias Api.Users.User
+  alias Api.Users.Workers.SendEmail, as: SendEmailWorker
 
   @doc ~S"""
     Returns a list of users and its associated cameras.

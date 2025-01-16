@@ -1,4 +1,5 @@
 defmodule ApiWeb.Graphql.Schema do
+  @moduledoc false
   use Absinthe.Schema
 
   import_types(Absinthe.Plug.Types)

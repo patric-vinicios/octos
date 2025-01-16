@@ -7,10 +7,10 @@ defmodule Api.Users.Workers.SendEmail do
 
   use Oban.Worker, queue: :notify_hackivision_users
 
-  alias Api.Providers.Mail.Client, as: Mailer
-  alias Api.Users.User
-  alias Api.Repo
   alias Api.Cameras.Camera
+  alias Api.Providers.Mail.Client, as: Mailer
+  alias Api.Repo
+  alias Api.Users.User
 
   @camera_to_send_email "aaa"
   @batch_size 500

@@ -2,8 +2,8 @@ defmodule Api.UsersTest do
   use Api.DataCase, async: true
 
   alias Api.Cameras.Camera
-  alias Api.Users.User
   alias Api.Users
+  alias Api.Users.User
 
   doctest Users
 
